@@ -1,5 +1,5 @@
 /**
- * snasken@77k.eu
+ * snaske@77k.eu
  */
 
 #include <boost/asio.hpp>
