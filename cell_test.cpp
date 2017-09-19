@@ -38,9 +38,13 @@ int main(int argc, char* argv[])
             std::cerr << "Usage: cell_test <netlist>" << std::endl;
             throw(std::runtime_error("Not enough arguments!"));
 	}
+        static const auto buffer_size = 128 * 1024;
+        std::ifstream is(argv[1], std::ios::in | std::ios::   binary);
+        if(!is) throw(std::runtime_error("Error opening file! "));
 
-	Space4 l_space;
-	Point4 l_p;
+
+        BLIFParser p(argv[1]);
+        p << is;
 
     }
     catch (std::exception& e)
